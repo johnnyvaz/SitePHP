@@ -18,5 +18,14 @@
     <a href="{{ url('/admin/treinadores/create') }}" title="Addtreinador"><button class="btn btn-default btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Adicionar Treinador</button></a>
   </div>
 </div>
+<div>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Paginas
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu4">
+    <a href="{{ url('/page/pages') }}" title="Paginas"><button class="btn btn-default btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Listar Paginas</button></a>
+    <a href="{{ url('/page/pages/create') }}" title="Addtreinador"><button class="btn btn-default btn-block"><i class="fa fa-arrow-left" aria-hidden="true"></i> Adicionar Pagina</button></a>
+  </div>
+</div>
 </div>
         
