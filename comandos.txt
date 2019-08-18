@@ -1,1 +1,9 @@
 php artisan crud:generate Person --fields="name:string; email:string; gender:char; birthdate:date" --route=yes --pk=id
+
+php artisan crud:generate Banner --fields='nome#string; arquivo#file; html#string; dataExpiracao#date;'
+ --view-path=admin --controller-namespace=Admin --route-group=admin --form-helper=html
+
+php artisan crud:generate Galeria --fields='nome#string; path#string; html#string; dataExpiracao#date;'
+ --view-path=admin --controller-namespace=Admin --route-group=admin --form-helper=html
+
+
