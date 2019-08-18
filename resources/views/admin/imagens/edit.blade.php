@@ -7,9 +7,9 @@
 
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Edit Imagen #{{ $imagen->id }}</div>
+                    <div class="card-header">Editar Imagem #{{ $imagen->id }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/imagens') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/admin/imagens') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
                         <br />
                         <br />
 

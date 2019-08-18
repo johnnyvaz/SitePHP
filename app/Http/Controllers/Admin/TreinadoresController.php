@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use App\Imagen;
+use App\Treinadore;
 use Illuminate\Http\Request;
 
-class ImagensController extends Controller
+class TreinadoresController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,17 +26,18 @@ class ImagensController extends Controller
         $perPage = 25;
 
         if (!empty($keyword)) {
-            $imagens = Imagen::where('nome', 'LIKE', "%$keyword%")
-                ->orWhere('arquivo', 'LIKE', "%$keyword%")
-                ->orWhere('ativo', 'LIKE', "%$keyword%")
+            $treinadores = Treinadore::where('nome', 'LIKE', "%$keyword%")
+                ->orWhere('especialidade', 'LIKE', "%$keyword%")
+                ->orWhere('facebook', 'LIKE', "%$keyword%")
+                ->orWhere('twitter', 'LIKE', "%$keyword%")
+                ->orWhere('email', 'LIKE', "%$keyword%")
+                ->orWhere('linkedin', 'LIKE', "%$keyword%")
                 ->latest()->paginate($perPage);
         } else {
-            $imagens = Imagen::latest()->paginate($perPage);
+            $treinadores = Treinadore::latest()->paginate($perPage);
         }
-        // $imagens = Imagen::make(stream_get_contents('miniatura','arquivo',['img']));
-        // return $img->response();
-        
-        return view('admin.imagens.index', compact('imagens'));
+
+        return view('admin.treinadores.index', compact('treinadores'));
     }
 
     /**
@@ -46,7 +47,7 @@ class ImagensController extends Controller
      */
     public function create()
     {
-        return view('admin.imagens.create');
+        return view('admin.treinadores.create');
     }
 
     /**
@@ -60,14 +61,10 @@ class ImagensController extends Controller
     {
         
         $requestData = $request->all();
-                if ($request->hasFile('arquivo')) {
-            $requestData['arquivo'] = $request->file('arquivo')
-                ->store('uploads', 'public');
-        }
+        
+        Treinadore::create($requestData);
 
-        Imagen::create($requestData);
-
-        return redirect('admin/imagens')->with('flash_message', 'Imagen added!');
+        return redirect('admin/treinadores')->with('flash_message', 'Treinadore added!');
     }
 
     /**
@@ -79,9 +76,9 @@ class ImagensController extends Controller
      */
     public function show($id)
     {
-        $imagen = Imagen::findOrFail($id);
+        $treinadore = Treinadore::findOrFail($id);
 
-        return view('admin.imagens.show', compact('imagen'));
+        return view('admin.treinadores.show', compact('treinadore'));
     }
 
     /**
@@ -93,9 +90,9 @@ class ImagensController extends Controller
      */
     public function edit($id)
     {
-        $imagen = Imagen::findOrFail($id);
+        $treinadore = Treinadore::findOrFail($id);
 
-        return view('admin.imagens.edit', compact('imagen'));
+        return view('admin.treinadores.edit', compact('treinadore'));
     }
 
     /**
@@ -110,15 +107,11 @@ class ImagensController extends Controller
     {
         
         $requestData = $request->all();
-                if ($request->hasFile('arquivo')) {
-            $requestData['arquivo'] = $request->file('arquivo')
-                ->store('uploads', 'public');
-        }
+        
+        $treinadore = Treinadore::findOrFail($id);
+        $treinadore->update($requestData);
 
-        $imagen = Imagen::findOrFail($id);
-        $imagen->update($requestData);
-
-        return redirect('admin/imagens')->with('flash_message', 'Imagen updated!');
+        return redirect('admin/treinadores')->with('flash_message', 'Treinadore updated!');
     }
 
     /**
@@ -130,10 +123,8 @@ class ImagensController extends Controller
      */
     public function destroy($id)
     {
-        Imagen::destroy($id);
+        Treinadore::destroy($id);
 
-        return redirect('admin/imagens')->with('flash_message', 'Imagen deleted!');
+        return redirect('admin/treinadores')->with('flash_message', 'Treinadore deleted!');
     }
-    
-    
 }

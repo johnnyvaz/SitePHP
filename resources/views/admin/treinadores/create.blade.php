@@ -7,9 +7,9 @@
 
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Inserir nova imagem</div>
+                    <div class="card-header">Adicionar novo Treinador</div>
                     <div class="card-body">
-                        <a href="{{ url('/admin/imagens') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
+                        <a href="{{ url('/admin/treinadores') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
                         <br />
                         <br />
 
@@ -21,10 +21,10 @@
                             </ul>
                         @endif
 
-                        <form method="POST" action="{{ url('/admin/imagens') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
+                        <form method="POST" action="{{ url('/admin/treinadores') }}" accept-charset="UTF-8" class="form-horizontal" enctype="multipart/form-data">
                             {{ csrf_field() }}
 
-                            @include ('admin.imagens.form', ['formMode' => 'create'])
+                            @include ('admin.treinadores.form', ['formMode' => 'create'])
 
                         </form>
 
