@@ -7,3 +7,17 @@ php artisan crud:generate Galeria --fields='nome#string; path#string; html#strin
  --view-path=admin --controller-namespace=Admin --route-group=admin --form-helper=html
 
 
+php artisan crud:generate Imagens --fields='nome#string; arquivo#file; ativo#boolean;'  --view-path=admin --controller-namespace=Admin --route-group=admin --form-helper=html
+
+header("Content-Type: image/jpeg");
+$file = Storage::disk('public')->get('uploads/T8zuzzHDIzwEHpnmclX8aMWco8ecFzAeNc6Ru94S.jpeg');
+echo "<img src='/storage/uploads/T8zuzzHDIzwEHpnmclX8aMWco8ecFzAeNc6Ru94S.jpeg'/>";
+                
+
+<td>{{ Image::make($item->arquivo) }}</td>
+$img = Image::make(stream_get_contents($data['img']));
+return $img->response();
+
+$file = Storage::disk('public')->get($item->arquivo);
+$img = Image::make($file);
+                                        
