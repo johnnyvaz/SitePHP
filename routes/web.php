@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('admin/imagens', 'Admin\\ImagensController');
 Route::resource('admin/treinadores', 'Admin\\TreinadoresController');
+Route::resource('page/pages', 'PagesController');
