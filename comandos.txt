@@ -1,0 +1,1 @@
+php artisan crud:generate Person --fields="name:string; email:string; gender:char; birthdate:date" --route=yes --pk=id
