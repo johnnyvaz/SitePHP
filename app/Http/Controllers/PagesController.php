@@ -15,6 +15,14 @@ class PagesController extends Controller
      *
      * @return \Illuminate\View\View
      */
+
+    // public function home()
+    // {
+    //     $page = Page::findOrFail(2); 
+
+    //     return view('welcome',compact('page'));
+    // }
+
     public function index(Request $request)
     {
         $keyword = $request->get('search');
@@ -29,7 +37,7 @@ class PagesController extends Controller
             $pages = Page::latest()->paginate($perPage);
         }
 
-        return view('page.pages.index', compact('pages'));
+        return view('page.pages.index2', compact('pages'));
     }
 
     /**
@@ -71,6 +79,12 @@ class PagesController extends Controller
         $page = Page::findOrFail($id);
 
         return view('page.pages.show', compact('page'));
+    }
+    public function home()
+    {
+        $page = Page::findOrFail(2);
+
+        return view('welcome', compact('page'));
     }
 
     /**

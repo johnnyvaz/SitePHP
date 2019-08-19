@@ -9,7 +9,8 @@
                 <div class="card">
                     <div class="card-header">Editar Página #{{ $page->id }} - {{ $page->menu }}</div>
                     <div class="card-body">
-                        <a href="{{ url('/page/pages') }}" title="Back"><button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Back</button></a>
+                        <a href="{{ url('/page/pages') }}" title="Back">
+                        <button class="btn btn-warning btn-sm"><i class="fa fa-arrow-left" aria-hidden="true"></i> Voltar</button></a>
                         <br />
                         <br />
 

@@ -8,10 +8,18 @@
     <input class="form-control" name="menu" type="text" id="menu" value="{{ isset($page->menu) ? $page->menu : ''}}" >
     {!! $errors->first('menu', '<p class="help-block">:message</p>') !!}
 </div>
+<!-- <div id="summernote"></div> -->
 <div class="form-group {{ $errors->has('body') ? 'has-error' : ''}}">
     <label for="body" class="control-label">{{ 'Body' }}</label>
-    <textarea class="form-control" rows="15" name="body" type="textarea" id="body" >{{ isset($page->body) ? $page->body : ''}}</textarea>
+    <textarea id="summernote" class="form-control" rows="15" name="body" type="textarea" id="body" >{{!! isset($page->body) ? $page->body : '' !!}}</textarea>
     {!! $errors->first('body', '<p class="help-block">:message</p>') !!}
+    <script>
+        $('#summernote').summernote({
+        placeholder: 'Hello stand alone ui',
+        tabsize: 2,
+        height: 1000
+        });
+    </script>
 </div>
 
 
