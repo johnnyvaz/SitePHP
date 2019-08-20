@@ -3,8 +3,6 @@
 @section('content')
     <div class="container">
         <div class="row">
-            @include('admin.sidebar')
-
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Paginas</div>

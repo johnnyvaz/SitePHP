@@ -13,7 +13,7 @@ class Page extends Model
      *
      * @var string
      */
-    protected $table = 'pages';
+    protected $table = ['imagens','treinadores'];
 
     /**
     * The database primary key value.
