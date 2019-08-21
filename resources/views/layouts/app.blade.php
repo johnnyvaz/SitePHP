@@ -112,7 +112,7 @@
 				</div>
 			</div>
 		</div>
-    </nav>        
+    </nav>
         <main class="py-4">
             @yield('content')
         </main>
@@ -123,8 +123,10 @@
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-4 fh5co-widget">
-					<h3>{!!$page->rodapeTitulo!!}</h3>
+                @foreach($pages as $item)
+                    <h3>{!!$page->rodapeTitulo!!}</h3>
 					<p>{!!$page->rodapeTexto!!}</p>
+                @endforeach
 					<p><a class="btn btn-primary" href="#">Become A Member</a></p>
 				</div>
 				<div class="col-md-8">
@@ -164,7 +166,9 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
+                    @foreach($pages as $item)
 					{!!$page->direitosReservados!!}
+					@endforeach
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">
@@ -184,7 +188,7 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-	
+
 	<!-- jQuery -->
 	<script src="/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -205,6 +209,6 @@
 	<!-- Main -->
 	<script src="/js/main.js"></script>
 
-	
+
 </body>
 </html>
