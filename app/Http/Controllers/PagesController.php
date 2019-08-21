@@ -28,16 +28,8 @@ class PagesController extends Controller
         $keyword = $request->get('search');
         $perPage = 25;
 
-        if (!empty($keyword)) {
-            $pages = Page::where('titulo', 'LIKE', "%$keyword%")
-                ->orWhere('menu', 'LIKE', "%$keyword%")
-                ->orWhere('body', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
-        } else {
-            $pages = Page::latest()->paginate($perPage);
-        }
 
-        return view('page.pages.index2', compact('pages'));
+        return view('index', compact('pages'));
     }
 
     /**
@@ -82,9 +74,11 @@ class PagesController extends Controller
     }
     public function home()
     {
-        $page = Page::findOrFail(2);
+        $page = Page::findOrFail(1);
 
-        return view('welcome', compact('page'));
+        $imagem1 = "teste imagem ok";
+
+        return view('welcome', compact('page', 'imagem1'));
     }
 
     /**

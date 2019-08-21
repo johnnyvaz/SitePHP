@@ -13,7 +13,7 @@ class Page extends Model
      *
      * @var string
      */
-    protected $table = ['imagens','treinadores'];
+    // protected $table = ['imagens','treinadores'];
 
     /**
     * The database primary key value.
@@ -27,7 +27,7 @@ class Page extends Model
      *
      * @var array
      */
-    protected $fillable = ['titulo', 'menu', 'body'];
+    protected $fillable = ['titulo', 'slogan', 'slogan2', 'menu', 'body',''];
 
     
 }

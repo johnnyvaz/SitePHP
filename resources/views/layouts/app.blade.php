@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Flag Brasil') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <!-- <script src="{{ asset('js/app.js') }}" defer></script> -->
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -99,11 +99,12 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="index.html">Home</a></li>
+							<li class="active"><a href="{{ route('index') }}">Home</a></li>
 							<li><a href="gallery.html">Gallery</a></li>
 							<li><a href="about.html">Trainer</a></li>
 							<li><a href="pricing.html">Pricing</a></li>
                             <li><a href="contact.html">Contact</a></li>
+							<li><a href="{{ route('home') }}">Área Restrita</a></li>
 						</ul>
 					</div>
 				</div>

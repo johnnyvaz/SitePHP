@@ -12,12 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('index');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/index', 'PagesController@home')->name('index');
 
 Route::resource('admin/imagens', 'Admin\\ImagensController');
 Route::resource('admin/treinadores', 'Admin\\TreinadoresController');
