@@ -55,7 +55,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-						<p class="num">Call: +01 123 456 7890</p>
+					@foreach($pages as $item)
+						<p class="num">Telefone: {!!$item->telefone!!}</p>
+					@endforeach
 						<ul class="fh5co-social">
                         @guest
                             <li class="nav-item ">
@@ -100,10 +102,10 @@
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
 							<li class="active"><a href="{{ route('index') }}">Home</a></li>
-							<li><a href="gallery.html">Gallery</a></li>
-							<li><a href="about.html">Trainer</a></li>
-							<li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+							<li><a href="#">Gallery</a></li>
+							<li><a href="#">Trainer</a></li>
+							<li><a href="#">Pricing</a></li>
+                            <li><a href="#">Contact</a></li>
 							<li><a href="{{ route('home') }}">Área Restrita</a></li>
 						</ul>
 					</div>
@@ -116,7 +118,73 @@
         </main>
     </div>
 
+	<footer id="fh5co-footer" class="fh5co-bg" style="background-image: url(images/img_bg_1.jpg);" role="contentinfo">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<h3>{!!$page->rodapeTitulo!!}</h3>
+					<p>{!!$page->rodapeTexto!!}</p>
+					<p><a class="btn btn-primary" href="#">Become A Member</a></p>
+				</div>
+				<div class="col-md-8">
+					<h3>Classes</h3>
+					<div class="col-md-4 col-sm-4 col-xs-6">
+						<ul class="fh5co-footer-links">
+							<li><a href="#">Cardio</a></li>
+							<li><a href="#">Body Building</a></li>
+							<li><a href="#">Yoga</a></li>
+							<li><a href="#">Boxing</a></li>
+							<li><a href="#">Running</a></li>
+						</ul>
+					</div>
 
+					<div class="col-md-4 col-sm-4 col-xs-6">
+						<ul class="fh5co-footer-links">
+							<li><a href="#">Boxing</a></li>
+							<li><a href="#">Martial Arts</a></li>
+							<li><a href="#">Karate</a></li>
+							<li><a href="#">Kungfu</a></li>
+							<li><a href="#">Basketball</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-4 col-sm-4 col-xs-6">
+						<ul class="fh5co-footer-links">
+							<li><a href="#">Badminton</a></li>
+							<li><a href="#">Body Building</a></li>
+							<li><a href="#">Teams</a></li>
+							<li><a href="#">Advertise</a></li>
+							<li><a href="#">API</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+					{!!$page->direitosReservados!!}
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+	
 	<!-- jQuery -->
 	<script src="/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->

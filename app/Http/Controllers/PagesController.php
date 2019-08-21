@@ -10,11 +10,13 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\View\View
-     */
+    public function welcome(Request $request)
+    {
+        $page = Page::findOrFail(1);
+
+        return view('welcome', compact('page'));
+    }
+    
     public function index(Request $request)
     {
         $keyword = $request->get('search');

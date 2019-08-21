@@ -27,7 +27,10 @@ class Page extends Model
      *
      * @var array
      */
-    protected $fillable = ['titulo', 'slogan', 'slogan2', 'menu', 'body',''];
+    protected $fillable = 
+    ['titulo', 'slogan', 'slogan2', 'telefone',
+'slogan3', 'rodapeTitulo', 'rodapeTexto', 'direitosReservados'
+];
 
     
 }
