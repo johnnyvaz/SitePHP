@@ -8,13 +8,13 @@
     <input class="form-control" name="menu" type="text" id="menu" value="{{ isset($page->menu) ? $page->menu : ''}}" >
     {!! $errors->first('menu', '<p class="help-block">:message</p>') !!}
 </div>
-<!-- <div id="summernote"></div> -->
+
 <div class="form-group {{ $errors->has('body') ? 'has-error' : ''}}">
     <label for="body" class="control-label">{{ 'Body' }}</label>
-    <textarea id="summernote" class="form-control" rows="15" name="body" type="textarea" id="body" >{{!! isset($page->body) ? $page->body : '' !!}}</textarea>
+    <input id="body" class="form-control" name="body" type="text" id="body" value="{{ isset($page->body) ? $page->body : ''}}" >
     {!! $errors->first('body', '<p class="help-block">:message</p>') !!}
 </div>
-
+<hr>
 
 <div class="form-group">
     <input class="btn btn-primary" type="submit" value="{{ $formMode === 'edit' ? 'Update' : 'Create' }}">

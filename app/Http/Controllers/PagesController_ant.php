@@ -15,20 +15,21 @@ class PagesController extends Controller
      *
      * @return \Illuminate\View\View
      */
+
+    // public function home()
+    // {
+    //     $page = Page::findOrFail(2); 
+
+    //     return view('welcome',compact('page'));
+    // }
+
     public function index(Request $request)
     {
         $keyword = $request->get('search');
         $perPage = 25;
 
-        if (!empty($keyword)) {
-            $pages = Page::where('titulo', 'LIKE', "%$keyword%")
-                ->orWhere('menu', 'LIKE', "%$keyword%")
-                ->orWhere('body', 'LIKE', "%$keyword%")
-                ->latest()->paginate($perPage);
-        } else {
-            $pages = Page::latest()->paginate($perPage);
-        }
-        return view('page.pages.index', compact('pages'));
+
+        return view('index', compact('pages'));
     }
 
     /**
@@ -70,6 +71,14 @@ class PagesController extends Controller
         $page = Page::findOrFail($id);
 
         return view('page.pages.show', compact('page'));
+    }
+    public function home()
+    {
+        $page = Page::findOrFail(1);
+
+        $imagem1 = "teste imagem ok";
+
+        return view('welcome', compact('page', 'imagem1'));
     }
 
     /**
