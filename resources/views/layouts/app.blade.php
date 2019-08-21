@@ -55,8 +55,8 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-					@foreach($pages as $item)
-						<p class="num">Telefone: {!!$item->telefone!!}</p>
+					@foreach($page as $item)
+						<p class="num">Telefone: {{$page->telefone}}</p>
 					@endforeach
 						<ul class="fh5co-social">
                         @guest
@@ -123,7 +123,7 @@
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-4 fh5co-widget">
-                @foreach($pages as $item)
+                @foreach($page as $item)
                     <h3>{!!$page->rodapeTitulo!!}</h3>
 					<p>{!!$page->rodapeTexto!!}</p>
                 @endforeach
@@ -166,8 +166,8 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-                    @foreach($pages as $item)
-					{!!$page->direitosReservados!!}
+                    @foreach($page as $item4)
+					{{$item4->direitosReservados}}
 					@endforeach
 					</p>
 					<p>
