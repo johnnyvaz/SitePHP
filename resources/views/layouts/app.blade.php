@@ -42,9 +42,6 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
 
 <style>
     .fh5co-nav ul li a{
@@ -102,20 +99,16 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-                            
 							<li class="active"><a href="index.html">Home</a></li>
 							<li><a href="gallery.html">Gallery</a></li>
 							<li><a href="about.html">Trainer</a></li>
 							<li><a href="pricing.html">Pricing</a></li>
-                            <li><a href="blog.html">Blog</a></li>
                             <li><a href="contact.html">Contact</a></li>
 						</ul>
 					</div>
 				</div>
-				
 			</div>
 		</div>
-                        
     </nav>        
         <main class="py-4">
             @yield('content')

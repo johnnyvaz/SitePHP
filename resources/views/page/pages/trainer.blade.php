@@ -13,13 +13,6 @@
     <label for="body" class="control-label">{{ 'Body' }}</label>
     <textarea id="summernote" class="form-control" rows="15" name="body" type="textarea" id="body" >{{!! isset($page->body) ? $page->body : '' !!}}</textarea>
     {!! $errors->first('body', '<p class="help-block">:message</p>') !!}
-    <script>
-        $('#summernote').summernote({
-        placeholder: 'Hello stand alone ui',
-        tabsize: 2,
-        height: 1000
-        });
-    </script>
 </div>
 
 
