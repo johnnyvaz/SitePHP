@@ -1,5 +1,5 @@
 # Instalação
- configure .env
- composer i
- php artisan migrate
- php artisan serve
+ * configure .env
+ *  composer i
+ * php artisan migrate
+ * php artisan serve
