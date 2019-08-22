@@ -55,9 +55,9 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-12 text-right">
-					@foreach($page as $item)
-						<p class="num">Telefone: {{$page->telefone}}</p>
-					@endforeach
+				
+						<p class="num">Telefone: </p>
+				
 						<ul class="fh5co-social">
                         @guest
                             <li class="nav-item ">
@@ -101,7 +101,7 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-							<li class="active"><a href="{{ route('index') }}">Home</a></li>
+							<li class="active"><a href="">Home</a></li>
 							<li><a href="#">Gallery</a></li>
 							<li><a href="#">Trainer</a></li>
 							<li><a href="#">Pricing</a></li>
@@ -123,10 +123,10 @@
 		<div class="container">
 			<div class="row row-pb-md">
 				<div class="col-md-4 fh5co-widget">
-                @foreach($page as $item)
-                    <h3>{!!$page->rodapeTitulo!!}</h3>
-					<p>{!!$page->rodapeTexto!!}</p>
-                @endforeach
+               
+                    <h3>rodapeTitulo</h3>
+					<p>rodapeTexto</p>
+               
 					<p><a class="btn btn-primary" href="#">Become A Member</a></p>
 				</div>
 				<div class="col-md-8">
@@ -166,9 +166,8 @@
 			<div class="row copyright">
 				<div class="col-md-12 text-center">
 					<p>
-                    @foreach($page as $item4)
-					{{$item4->direitosReservados}}
-					@endforeach
+                    direitosReservados
+					
 					</p>
 					<p>
 						<ul class="fh5co-social-icons">

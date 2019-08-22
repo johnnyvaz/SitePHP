@@ -10,13 +10,19 @@ use Illuminate\Http\Request;
 
 class PagesController extends Controller
 {
-    public function welcome(Request $request)
-    {
-        $page = Page::findOrFail(1);
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\View\View
+     */
 
-        return view('welcome', compact('page'));
-    }
-    
+    // public function home()
+    // {
+    //     $page = Page::findOrFail(2); 
+
+    //     return view('welcome',compact('page'));
+    // }
+
     public function index(Request $request)
     {
         $keyword = $request->get('search');
@@ -30,6 +36,7 @@ class PagesController extends Controller
         } else {
             $pages = Page::latest()->paginate($perPage);
         }
+
         return view('page.pages.index', compact('pages'));
     }
 
@@ -72,6 +79,12 @@ class PagesController extends Controller
         $page = Page::findOrFail($id);
 
         return view('page.pages.show', compact('page'));
+    }
+    public function home()
+    {
+        $page = Page::findOrFail(2);
+
+        return view('welcome', compact('page'));
     }
 
     /**
